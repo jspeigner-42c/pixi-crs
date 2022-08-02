@@ -1,0 +1,14 @@
+name: Pixi Token
+
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - id: step1
+      run: | 
+        response=$(curl -k -d "user=user@acme.com&pass=hellopixi" -X POST https://photo-demo.westeurope.cloudapp.azure.com/andy/api/login | jq -r '.token')
+        echo "response from curl= $response"
+        
+        docker pull 42crunch/scand-agent:latest
+        docker run -e SCAN_TOKEN=342e841f-b915-4751-9d86-012a968a4eb7 -e SECURITY_TOKEN=$response 42crunch/scand-agent:latest
