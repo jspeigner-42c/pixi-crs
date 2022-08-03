@@ -11,4 +11,4 @@ jobs:
         echo "response from curl= $response"
         
         docker pull 42crunch/scand-agent:latest
-        docker run -e SCAN_TOKEN=342e841f-b915-4751-9d86-012a968a4eb7 -e SECURITY_TOKEN=$response 42crunch/scand-agent:latest
+        docker run -e SCAN_TOKEN=609cd70b-2132-4c3a-a32c-05ee47d51127 -e SECURITY_TOKEN=$response 42crunch/scand-agent:latest
